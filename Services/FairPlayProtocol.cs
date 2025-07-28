@@ -1,7 +1,8 @@
-﻿using System;
+﻿using DiceGame.UI;
+using System;
 using System.Text;
 
-namespace DiceGame
+namespace DiceGame.Services
 {
     public class FairPlayProtocol
     {

@@ -4,7 +4,7 @@ using Org.BouncyCastle.Crypto.Digests;
 using Org.BouncyCastle.Crypto.Macs;
 using Org.BouncyCastle.Crypto.Parameters;
 
-namespace DiceGame
+namespace DiceGame.Services
 {
     public class HmacService
     {

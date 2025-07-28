@@ -1,8 +1,9 @@
-﻿using System;
+﻿using DiceGame.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DiceGame
+namespace DiceGame.Utilities
 {
     public static class DiceParser
     {
