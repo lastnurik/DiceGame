@@ -38,6 +38,12 @@ namespace DiceGame
                 Environment.Exit(1);
                 return;
             }
+            catch (FormatException ex)
+            {
+                ui.DisplayError($"Invalid dice format: {ex.Message}. Please ensure all dice faces are integers.");
+                Environment.Exit(1);
+                return;
+            }
 
             ui.DisplayMessage("Successfully parsed dice:");
             for (int i = 0; i < availableDice.Count; i++)
@@ -51,6 +57,7 @@ namespace DiceGame
                 firstMoveChoiceResult = fairPlay.DetermineFirstPlayerFairly(Constants.FIRST_PLAYER_MIN_VALUE, Constants.FIRST_PLAYER_MAX_VALUE);
                 if (firstMoveChoiceResult == (int)UserInputStatus.Exit)
                 {
+                    Console.WriteLine("Exiting the game. Goodbye!");
                     Environment.Exit(0);
                 }
                 if (firstMoveChoiceResult == (int)UserInputStatus.Help)
@@ -131,7 +138,6 @@ namespace DiceGame
                 computerDice = SelectComputerDice(remainingDice, calculator);
                 remainingDice.Remove(computerDice);
                 ui.DisplayMessage($"I make the first move and choose the {computerDice} dice.");
-
                 UserInput userChoice;
                 do
                 {
@@ -196,6 +202,7 @@ namespace DiceGame
                     bestComputerDice = compCandidate;
                 }
             }
+            Console.WriteLine(bestComputerDice.ToString());
             return bestComputerDice;
         }
     }

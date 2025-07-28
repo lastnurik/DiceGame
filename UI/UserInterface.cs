@@ -6,10 +6,10 @@ namespace DiceGame.UI
 {
     public enum UserInputStatus
     {
-        Success,
-        Exit,
-        Help,
-        Invalid
+        Success = 0,
+        Exit = -1,
+        Help = -2,
+        Invalid = -3
     }
 
     public struct UserInput
